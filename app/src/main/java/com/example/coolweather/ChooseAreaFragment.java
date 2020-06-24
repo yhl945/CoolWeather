@@ -116,6 +116,16 @@ public class ChooseAreaFragment extends Fragment {
                     selectedCity = cityList.get(position);
                     queryCounties();
                 }
+                //传入解析天气信息
+                else if(currentLevel == LEVEL_COUNTY) {
+                    String weatherId = countyList.get(position).getWeatherId();//获取城市对应天气id
+                    if (getActivity() instanceof MainActivity) { //处理逻辑不变
+                        Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                        intent.putExtra("weather_id", weatherId);
+                        startActivity(intent);
+                        getActivity().finish();
+                    }
+                }
             }
         });
         backButton.setOnClickListener(new View.OnClickListener() {
