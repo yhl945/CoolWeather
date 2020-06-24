@@ -19,7 +19,7 @@
         android:layout_marginRight="10dp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:textColor="#ffff00"
+        android:textColor="#F44336"
         android:textSize="16sp"/>
 
 

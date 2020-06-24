@@ -124,6 +124,11 @@ public class ChooseAreaFragment extends Fragment {
                         intent.putExtra("weather_id", weatherId);
                         startActivity(intent);
                         getActivity().finish();
+                    } else if(getActivity() instanceof WeatherActivity){
+                        WeatherActivity activity = (WeatherActivity) getActivity();
+                        activity.drawerLayout.closeDrawers();//关闭滑动菜单
+                        activity.swipeRefreshLayout.setRefreshing(true); //显示下拉进度条
+                        activity.requestWeather(weatherId);  //请求新城市信息
                     }
                 }
             }
